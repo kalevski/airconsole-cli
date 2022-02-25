@@ -1,6 +1,6 @@
 {
   "name": "airconsole-cli",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "CLI tools for AirConsole game development",
   "main": "src/index.js",
   "bin": {
@@ -57,5 +57,8 @@
     "fs-extra": "^10.0.1",
     "ora": "5.4.1",
     "parcel": "^2.3.2"
+  },
+  "peerDependencies": {
+    "parcel": "2.x"
   }
 }

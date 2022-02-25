@@ -46,7 +46,7 @@ class ProjectInit extends Command {
                 start: 'airconsole project start'
             },
             dependencies: ['phaser'],
-            devDependencies: []
+            devDependencies: ['airconsole-cli']
         }, message => spinner.text = message)
         
         createFile('.gitignore', projectPath, templates.get('template.gitignore'))
