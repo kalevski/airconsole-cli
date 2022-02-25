@@ -1,0 +1,8 @@
+node_modules
+.parcel-cache
+
+public/*
+!public/assets
+!public/README.md
+
+
