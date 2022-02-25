@@ -1,15 +1,10 @@
-import path from 'path'
 import { Command } from 'commander'
 import concurrently from 'concurrently'
-import ora from 'ora'
-import * as templates from '../utils/templates'
-import { createDir, getPath, isDirEmpty, createFile } from '../utils/files'
-import { createPackageJSON } from '../utils/npm'
+import express from 'express'
+import { getPath } from '../utils/files'
 import Color from '../utils/Color'
-
-const TEMPLATES = [
-    'phaser'
-]
+import os from 'os'
+import open from 'open'
 
 class ProjectStart extends Command {
 
@@ -39,11 +34,31 @@ class ProjectStart extends Command {
             outputStream: process.stdout
         })
 
+        const devServer = express()
+
+
+        const IP_ADDRESS = Object.values(os.networkInterfaces()).flat().filter(item => {
+            return !item.internal && item.family === 'IPv4'
+        }).find(Boolean).address
+        const PIBLIC_DIR = getPath('./public')
+        const PORT = process.env['PORT'] || 3000
+        
+        const url = `http://www.airconsole.com/simulator/#http://${IP_ADDRESS}:${PORT}`
+
+        devServer.use(express.static(PIBLIC_DIR))
+        devServer.get('*', (_, response) => response.redirect(url))
+        
+        devServer.listen(PORT, '0.0.0.0', () => {
+            console.log('dev server: http://localhost:3000')
+            open(url)
+        })
+
+
         processes.result.then(() => {
             process.exit()
         }).catch(error => {
             console.log('❌ error: ', error.message)
-            process.exit()
+            process.exit() 
         })
 
     }
