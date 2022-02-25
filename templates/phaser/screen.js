@@ -1,4 +1,5 @@
 import { Game, Scale, WEBGL } from 'phaser'
+import GameWorld from './scenes/GameWorld'
 
 const screen = new Game({
     type: WEBGL,
@@ -12,3 +13,6 @@ const screen = new Game({
     height: 720
 })
 
+screen.scene.add('world', new GameWorld())
+
+screen.scene.start('world')

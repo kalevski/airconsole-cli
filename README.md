@@ -3,6 +3,7 @@
 CLI tools for AirConsole game development using web technologies.
 
 [![GitHub](https://img.shields.io/github/license/kalevski/airconsole-cli?style=for-the-badge)](https://github.com/kalevski/airconsole-cli/blob/main/LICENSE)
+[![npm downloads](https://img.shields.io/npm/dw/airconsole-cli?label=downloads&style=for-the-badge)](https://www.npmjs.com/package/airconsole-cli)
 
 ## 🚀 Getting started
 ```
@@ -13,7 +14,8 @@ npm start
 ```
 
 ## 🚧 Roadmap
-- [x] CLI project initializer
-- [x] CLI for running the project
+- [x] CLI command for creating a project
+- [x] CLI command for running the project
+- [ ] CLI command for building the project and creating ZIP file
 - [x] Phaser support
-- [ ] Pixi.js support 
+- [ ] Pixi.js support

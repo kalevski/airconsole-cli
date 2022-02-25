@@ -1,4 +1,5 @@
 import { Game, Scale, WEBGL } from 'phaser'
+import Gamepad from './scenes/Gamepad'
 
 const controller = new Game({
     type: WEBGL,
@@ -12,3 +13,6 @@ const controller = new Game({
     height: 720
 })
 
+controller.scene.add('gamepad', new Gamepad())
+
+controller.scene.start('gamepad')
