@@ -46,11 +46,12 @@ class ProjectInit extends Command {
                 start: 'airconsole project start'
             },
             dependencies: ['phaser'],
-            devDependencies: ['airconsole-cli']
+            devDependencies: ['airconsole-cli', 'parcel']
         }, message => spinner.text = message)
         
         createFile('.gitignore', projectPath, templates.get('template.gitignore'))
-        templates.clone('phaser', path.join(projectPath, 'src'))
+        templates.clone('phaser-controller', path.join(projectPath, 'controller'))
+        templates.clone('phaser-screen', path.join(projectPath, 'screen'))
         templates.clone('public', path.join(projectPath, 'public'))
         createFile('package.json', projectPath, packageJSON)
         spinner.succeed('project created!')

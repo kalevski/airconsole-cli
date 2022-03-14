@@ -17,13 +17,13 @@ class ProjectStart extends Command {
         const rootPath = getPath()
         const commands = [
             {
-                command: 'parcel watch -p 3001 --dist-dir public src/screen.html',
+                command: 'parcel watch -p 3001 --dist-dir public screen/screen.html',
                 name: 'screen',
                 prefixColor: Color.BLUE,
                 cwd: rootPath
             },
             {
-                command: 'parcel watch -p 3002 --dist-dir public src/controller.html',
+                command: 'parcel watch -p 3002 --dist-dir public controller/controller.html',
                 name: 'controller',
                 prefixColor: Color.AMBER,
                 cwd: rootPath
@@ -35,7 +35,6 @@ class ProjectStart extends Command {
         })
 
         const devServer = express()
-
 
         const IP_ADDRESS = Object.values(os.networkInterfaces()).flat().filter(item => {
             return !item.internal && item.family === 'IPv4'
