@@ -16,6 +16,7 @@ npm start
 ## 🚧 Roadmap
 - [x] CLI command for creating a project
 - [x] CLI command for running the project
-- [ ] CLI command for building the project and creating ZIP file
+- [x] CLI command for building the project
+- [ ] CLI command for creating zip build
 - [x] Phaser support
 - [ ] Pixi.js support
