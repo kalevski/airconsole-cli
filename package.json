@@ -1,6 +1,6 @@
 {
   "name": "airconsole-cli",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "CLI tools for AirConsole game development",
   "main": "src/index.js",
   "bin": {

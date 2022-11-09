@@ -43,7 +43,8 @@ class ProjectInit extends Command {
         const packageJSON = createPackageJSON({
             name: 'airconsole-game',
             scripts: {
-                start: 'airconsole project start'
+                start: 'airconsole project start',
+                build: 'airconsole project build'
             },
             dependencies: ['phaser'],
             devDependencies: ['airconsole-cli', 'parcel']
