@@ -14,13 +14,13 @@ class ProjectBuild extends Command {
         const rootPath = getPath()
         const commands = [
             {
-                command: 'parcel build --no-scope-hoist --no-cache --no-source-maps --log-level verbose --dist-dir public screen/screen.html',
+                command: 'parcel build  --public-url \'.\' --no-scope-hoist --no-cache --no-source-maps --log-level info --dist-dir public screen/screen.html',
                 name: 'screen',
                 prefixColor: Color.BLUE,
                 cwd: rootPath
             },
             {
-                command: 'parcel build --no-scope-hoist --no-cache --no-source-maps --log-level verbose --dist-dir public controller/controller.html',
+                command: 'parcel build --public-url \'.\' --no-scope-hoist --no-cache --no-source-maps --log-level info --dist-dir public controller/controller.html',
                 name: 'controller',
                 prefixColor: Color.AMBER,
                 cwd: rootPath
